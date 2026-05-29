@@ -502,6 +502,163 @@
       font-size: 14px;
     }
 
+
+    .pet-window-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .data-window {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 16px 38px rgba(84, 33, 68, 0.08);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .window-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 16px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-dark));
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .window-dots {
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .window-dots i {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      display: block;
+    }
+
+    .window-body {
+      padding: 22px;
+    }
+
+    .pet-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .pet-metric {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--blue-light);
+      border: 1px solid rgba(240, 106, 168, 0.18);
+    }
+
+    .pet-metric b {
+      display: block;
+      color: var(--blue-dark);
+      font-size: 26px;
+      letter-spacing: -0.055em;
+    }
+
+    .pet-metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .pet-chart {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 92px 1fr 70px;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .bar-track {
+      height: 20px;
+      border-radius: 999px;
+      background: #ffe3f0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: var(--w);
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-dark));
+    }
+
+    .pet-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .pet-table th,
+    .pet-table td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      color: var(--ink);
+    }
+
+    .pet-table th {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-weight: 900;
+    }
+
+    .pet-note {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      background: #fff7fb;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+      border: 1px dashed var(--line);
+    }
+
+    .data-source-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      margin-top: 14px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+      box-shadow: 0 12px 24px rgba(200, 63, 131, 0.18);
+    }
+
     .footer {
       background: var(--blue);
       color: #fff;
@@ -595,6 +752,19 @@
         grid-template-columns: 1fr;
       }
 
+      .pet-window-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pet-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .bar-row {
+        grid-template-columns: 78px 1fr 54px;
+      }
+
+
       .weather-main {
         align-items: flex-start;
         flex-direction: column;
@@ -649,6 +819,7 @@
         <a class="btn btn-primary" href="#weather">오늘 날씨 보기</a>
         <a class="btn btn-ghost" href="#issues">부산 이슈 보기</a>
         <a class="btn btn-ghost" href="#stats">복지 통계 보기</a>
+        <a class="btn btn-ghost" href="#petdata">반려동물 현황</a>
       </div>
     </div>
 
@@ -788,6 +959,119 @@
         </article>
       </div>
     </section>
+
+    <section id="petdata">
+      <div class="section-title">
+        <h3>05 PET DATA</h3>
+        <small>공공데이터포털 · 반려동물등록 현황</small>
+      </div>
+      <div class="grid">
+        <article class="card wide">
+          <h4>행정구역별 반려동물등록 개체 수 현황</h4>
+          <p>
+            농림축산식품부 농림축산검역본부 자료를 바탕으로 반려동물 등록 현황을 별도 창 형태로 구성했습니다.
+            원자료는 2022년 동물 보호복지 실태조사를 바탕으로 작성한 동물등록 현황이며, 시도·시군구별 개와 고양이 등록 누계를 담고 있습니다.
+          </p>
+
+          <div class="pet-window-grid">
+            <div class="data-window">
+              <div class="window-bar">
+                <span>자료 개요</span>
+                <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              </div>
+              <div class="window-body">
+                <div class="pet-summary">
+                  <div class="pet-metric">
+                    <b>252행</b>
+                    <span>행정구역별 자료 행 수</span>
+                  </div>
+                  <div class="pet-metric">
+                    <b>CSV</b>
+                    <span>파일데이터 제공 형식</span>
+                  </div>
+                  <div class="pet-metric">
+                    <b>2022</b>
+                    <span>동물 보호복지 실태조사 기반</span>
+                  </div>
+                </div>
+
+                <table class="pet-table" aria-label="반려동물 등록 현황 데이터 항목">
+                  <thead>
+                    <tr>
+                      <th>구분</th>
+                      <th>내용</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>시도</td>
+                      <td>광역 행정구역</td>
+                    </tr>
+                    <tr>
+                      <td>시군구</td>
+                      <td>기초 행정구역</td>
+                    </tr>
+                    <tr>
+                      <td>개등록 누계</td>
+                      <td>사망을 제외한 개 등록 누계</td>
+                    </tr>
+                    <tr>
+                      <td>고양이등록 누계</td>
+                      <td>사망을 제외한 고양이 등록 누계</td>
+                    </tr>
+                    <tr>
+                      <td>총 등록 누계</td>
+                      <td>개 등록 누계 + 고양이 등록 누계</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <a class="data-source-btn" target="_blank" rel="noopener" href="https://www.data.go.kr/data/15125454/fileData.do?recommendDataYn=Y#tab-layer-file">
+                  원자료 보러가기
+                </a>
+              </div>
+            </div>
+
+            <div class="data-window">
+              <div class="window-bar">
+                <span>그래프 창</span>
+                <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              </div>
+              <div class="window-body">
+                <p>
+                  아래 그래프는 이 자료가 포함하는 핵심 정보 구조를 시각화한 것입니다.
+                  실제 지역별 수치 그래프는 공공데이터포털에서 CSV 원자료를 내려받아 숫자를 반영하면 바로 확장할 수 있습니다.
+                </p>
+
+                <div class="pet-chart" aria-label="반려동물 등록 현황 데이터 구성 그래프">
+                  <div class="bar-row">
+                    <span>총 등록</span>
+                    <div class="bar-track"><div class="bar-fill" style="--w: 100%;"></div></div>
+                    <span>C=A+B</span>
+                  </div>
+                  <div class="bar-row">
+                    <span>개 등록</span>
+                    <div class="bar-track"><div class="bar-fill" style="--w: 78%;"></div></div>
+                    <span>A</span>
+                  </div>
+                  <div class="bar-row">
+                    <span>고양이</span>
+                    <div class="bar-track"><div class="bar-fill" style="--w: 34%;"></div></div>
+                    <span>B</span>
+                  </div>
+                </div>
+
+                <div class="pet-note">
+                  ※ 현재 파일에는 공공데이터포털 상세페이지에서 확인되는 자료 설명과 데이터 항목을 넣었습니다.
+                  CSV 원자료의 세부 수치를 보내주시면, 부산·전국·시도별 등록 수를 실제 숫자 그래프로 바꿔드릴 수 있습니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
